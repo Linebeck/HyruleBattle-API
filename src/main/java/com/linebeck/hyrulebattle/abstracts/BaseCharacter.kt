@@ -72,5 +72,7 @@ abstract class BaseCharacter(
 
     open fun onDeath(event: PlayerDeathEvent) {}
 
+    open fun cleanup(player: Player) {}
+
     private fun playTauntSound(player: Player) {}
 }
