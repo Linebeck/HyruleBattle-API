@@ -5,11 +5,16 @@ import java.util.*
 
 class BattleGameManager {
 
-    fun getBattlePlayerByUUID(uuid: UUID): BattlePlayer? {
-        TODO("Function is implemented in HyruleBattle.")
-    }
+    companion object {
 
-    fun getAllBattlePlayers(uuid: UUID): List<BattlePlayer>? {
-        TODO("Function is implemented in HyruleBattle.")
+        @JvmStatic
+        fun getBattlePlayerByUUID(uuid: UUID): BattlePlayer? {
+            TODO("Function is implemented in HyruleBattle.")
+        }
+
+        @JvmStatic
+        fun getAllBattlePlayers(uuid: UUID): List<BattlePlayer>? {
+            TODO("Function is implemented in HyruleBattle.")
+        }
     }
 }
