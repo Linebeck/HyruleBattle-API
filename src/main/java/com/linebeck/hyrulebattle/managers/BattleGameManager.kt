@@ -16,5 +16,15 @@ class BattleGameManager {
         fun getAllBattlePlayers(uuid: UUID): List<BattlePlayer>? {
             TODO("Function is implemented in HyruleBattle.")
         }
+
+        @JvmStatic
+        fun isInTeamGame(uuid: UUID): Boolean {
+            TODO("Function is implemented in HyruleBattle.")
+        }
+
+        @JvmStatic
+        fun getTeamMembers(uuid: UUID): List<BattlePlayer>? {
+            TODO("Function is implemented in HyruleBattle.")
+        }
     }
 }
