@@ -12,6 +12,6 @@ class FakeParticles {
         fun sendFakeParticles(player: Player, location: Location, particle: Particle, count: Int) {}
 
         @JvmStatic
-        fun sendFakeParticle(location: Location, particle: Particle, count: Int, distance: Double) {}
+        fun sendFakeParticlesToNearbyPlayers(location: Location, particle: Particle, count: Int, distance: Double) {}
     }
 }
