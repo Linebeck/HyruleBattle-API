@@ -1,0 +1,4 @@
+name: HyruleBattle-API
+version: '2.0'
+main: com.linebeck.hyrulebattle.internal.Main
+api-version: '1.20'
