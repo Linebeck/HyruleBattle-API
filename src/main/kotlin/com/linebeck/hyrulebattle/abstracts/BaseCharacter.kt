@@ -63,6 +63,8 @@ abstract class BaseCharacter(
 
     abstract fun onProjectileLaunch(event: ProjectileLaunchEvent)
 
+    abstract fun onProjectileHit(event: ProjectileHitEvent)
+
     open fun onEggThrow(event: PlayerEggThrowEvent) {}
 
     abstract fun onHeld(event: PlayerItemHeldEvent)
