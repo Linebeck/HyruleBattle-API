@@ -1,8 +1,9 @@
-package com.linebeck.tingle.handlers
+package com.linebeck.hylia.handlers
 
 import org.bukkit.Location
 import org.bukkit.Particle
 import org.bukkit.entity.Player
+import org.bukkit.inventory.ItemStack
 
 class FakeParticles {
 
@@ -13,5 +14,8 @@ class FakeParticles {
 
         @JvmStatic
         fun sendFakeParticlesToNearbyPlayers(location: Location, particle: Particle, count: Int, distance: Double) {}
+
+        @JvmStatic
+        fun sendScatterEffect(location: Location, distance: Double, itemStack: ItemStack) {}
     }
 }

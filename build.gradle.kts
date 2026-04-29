@@ -5,7 +5,7 @@ plugins {
 }
 
 group = "com.linebeck.hyrulebattle"
-version = "2.0"
+version = "2.1.1"
 
 repositories {
     mavenCentral()
@@ -18,10 +18,10 @@ repositories {
 }
 
 dependencies {
-    compileOnly("io.papermc.paper:paper-api:1.20.1-R0.1-SNAPSHOT")
+    compileOnly("io.papermc.paper:paper-api:1.21.4-R0.1-SNAPSHOT")
 }
 
-val targetJavaVersion = 17
+val targetJavaVersion = 21
 kotlin {
     jvmToolchain(targetJavaVersion)
 }
@@ -40,4 +40,13 @@ publishing {
 
 tasks.named("publishMavenJavaPublicationToMavenLocal") {
     dependsOn("jar")
+}
+
+tasks.processResources {
+    val props = mapOf("version" to project.version)
+    inputs.properties(props)
+
+    filesMatching("plugin.yml") {
+        expand(props)
+    }
 }

@@ -1,4 +1,4 @@
-package com.linebeck.tingle.utilities;
+package com.linebeck.hylia.utilities;
 
 import org.bukkit.Location;
 import org.bukkit.World;

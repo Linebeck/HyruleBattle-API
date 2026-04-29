@@ -1,21 +1,26 @@
 package com.linebeck.hyrulebattle.abstracts
 
 import com.destroystokyo.paper.profile.ProfileProperty
+import com.linebeck.hylia.enums.HyruleSound
+import io.papermc.paper.event.player.PlayerItemCooldownEvent
+import io.papermc.paper.event.player.PlayerStopUsingItemEvent
 import org.bukkit.entity.Player
 import org.bukkit.event.entity.*
 import org.bukkit.event.player.*
 import java.util.*
+import java.util.concurrent.ConcurrentHashMap
 
 abstract class BaseCharacter(
     val name: String,
     val profileProperty: ProfileProperty,
-    var tauntSound: String,
+    var tauntSound: HyruleSound? = null,
     var health: Float,
     var enabled: Boolean,
     var overridden: Boolean
 ) {
 
-    val players = mutableSetOf<UUID>()
+    private val players = ConcurrentHashMap.newKeySet<UUID>()
+    fun getPlayers(): Set<UUID> = players
 
     fun setup(player: Player) {
         player.inventory.clear()
@@ -42,6 +47,12 @@ abstract class BaseCharacter(
 
     abstract fun onInteractEntity(event: PlayerInteractEntityEvent)
 
+    open fun onItemCooldown(event: PlayerItemCooldownEvent) {}
+
+    open fun onStopUsingItem(event: PlayerStopUsingItemEvent) {}
+
+    open fun onItemConsume(event: PlayerItemConsumeEvent) {}
+
     abstract fun onAttack(event: EntityDamageByEntityEvent)
 
     abstract fun onBowAttack(event: EntityDamageByEntityEvent)
@@ -52,17 +63,24 @@ abstract class BaseCharacter(
 
     abstract fun onProjectileLaunch(event: ProjectileLaunchEvent)
 
+    open fun onEggThrow(event: PlayerEggThrowEvent) {}
+
     abstract fun onHeld(event: PlayerItemHeldEvent)
+
+    open fun onSwap(event: PlayerSwapHandItemsEvent) { event.isCancelled = true }
 
     abstract fun onSneak(event: PlayerToggleSneakEvent)
 
     open fun onPickup(event: EntityPickupItemEvent) { event.isCancelled = true }
 
-    abstract fun onPickupArrow(event: PlayerPickupArrowEvent)
+    open fun onPickupArrow(event: PlayerPickupArrowEvent) { event.isCancelled = true }
 
     open fun onDrop(event: PlayerDropItemEvent) { event.isCancelled = true }
 
     abstract fun onMove(event: PlayerMoveEvent)
+
+    @Suppress("UnstableApiUsage")
+    open fun onInput(event: PlayerInputEvent) {}
 
     abstract fun onItemMerge(event: ItemMergeEvent)
 
