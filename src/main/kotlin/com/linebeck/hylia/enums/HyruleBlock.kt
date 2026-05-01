@@ -10,6 +10,7 @@ enum class HyruleBlock(
 
     BLACK("011110", Material.BROWN_MUSHROOM_BLOCK, "blocks/black"),
     CRATE_BLOCK("000011", Material.BROWN_MUSHROOM_BLOCK, "blocks/crate_block"),
+    ELDIN_IRON_ORE_BLOCK("011111", Material.BROWN_MUSHROOM_BLOCK, "blocks/eldin_iron_ore_block"),
     GERUDO_BLOCK("000001", Material.BROWN_MUSHROOM_BLOCK, "blocks/gerudo_block"),
     GODTRIBE_PILLAR_BRICKS("010010", Material.BROWN_MUSHROOM_BLOCK, "blocks/godtribe_pillar_bricks"),
     GODTRIBE_STONE("001111", Material.BROWN_MUSHROOM_BLOCK, "blocks/godtribe_stone"),
@@ -41,8 +42,7 @@ enum class HyruleBlock(
     companion object {
         private val byMaterialAndBinary = values().associateBy { it.material to it.binary }
 
-        fun from(material: Material, binary: String): HyruleBlock? {
-            TODO("Function is implemented in Hylia.")
-        }
+        fun from(material: Material, binary: String): HyruleBlock? =
+            byMaterialAndBinary[material to binary]
     }
 }
