@@ -17,5 +17,8 @@ class FakeParticles {
 
         @JvmStatic
         fun sendScatterEffect(location: Location, distance: Double, itemStack: ItemStack) {}
+
+        @JvmStatic
+        fun sendFakeNoteParticlesToNearbyPlayers(location: Location, distance: Double, noteColor: Double) {}
     }
 }
