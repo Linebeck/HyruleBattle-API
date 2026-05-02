@@ -325,6 +325,7 @@ enum class HyruleItem(val path: String) {
     GALE_SEED("seeds/gale_seed"),
     MYSTERY_SEED("seeds/mystery_seed"),
     PEGASUS_SEED("seeds/pegasus_seed"),
+    SCENT_SEED("seeds/scent_seed"),
     HYLIAN_SHIELD("shields/hylian_shield"),
     KOKIRI_SHIELD("shields/kokiri_shield"),
     MIRROR_OF_TWILIGHT("shields/mirror_of_twilight"),
