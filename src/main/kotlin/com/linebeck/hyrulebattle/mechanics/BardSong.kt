@@ -36,6 +36,7 @@ data class BardNote(
 data class BardPerformanceState(
     val song: BardSong,
     val startTick: Long,
+    var lastNoteTick: Long,
     var currentNoteIndex: Int = 0,
     var score: Int = 0,
     var missed: Int = 0
